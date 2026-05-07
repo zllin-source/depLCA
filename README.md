@@ -1,1 +1,7 @@
-See example
+library(Rcpp)  
+library(RcppEigen)  
+sourceCpp("rlca.cpp")  
+sourceCpp("depLCA_1.cpp")  
+sourceCpp("depLCA_5.cpp")  
+source("depLCA.R")  
+sourceCpp("slcm.cpp")  
