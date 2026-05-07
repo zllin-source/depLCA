@@ -21,7 +21,7 @@ depLCA is an R package that implements dependent latent class analysis methods. 
 
 - **Latent Class Analysis**: Perform LCA on categorical data
 - **Dependent Structures**: Handle dependent observations and complex relationships
-- **SLCM**: Spatial latent class models
+- **SLCM**: Standard latent class models
 - **C++ Implementation**: Fast computation using Rcpp and RcppEigen
 - **Flexible Model Specification**: Support for various model configurations
 
