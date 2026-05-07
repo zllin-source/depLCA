@@ -1,8 +1,46 @@
 # depLCA
 
+Dependent Latent Class Analysis (depLCA) - An R package for performing latent class analysis with dependent structures.
 
+## Overview
+
+depLCA is an R package that implements dependent latent class analysis methods. It combines R with C++ (via Rcpp) to provide efficient computation for latent class analysis with complex dependency structures.
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Usage](#usage)
+- [Functions](#functions)
+- [Requirements](#requirements)
+- [License](#license)
+- [Author](#author)
+
+## Features
+
+- **Latent Class Analysis**: Perform LCA on categorical data
+- **Dependent Structures**: Handle dependent observations and complex relationships
+- **SLCM**: Spatial latent class models
+- **C++ Implementation**: Fast computation using Rcpp and RcppEigen
+- **Flexible Model Specification**: Support for various model configurations
 
 ## Installation
+
+### Prerequisites
+
+Make sure you have the following R packages installed:
+
+```r
+install.packages("Rcpp")
+install.packages("RcppEigen")
+```
+
+### Setup
+
+1. Clone or download the repository
+2. Navigate to the project directory
+3. Load all source files in R:
 
 ```r
 library(Rcpp)  
@@ -13,3 +51,104 @@ sourceCpp("depLCA_5.cpp")
 source("depLCA.R")  
 sourceCpp("slcm.cpp")
 ```
+
+## Quick Start
+
+Here's a basic example of using depLCA:
+
+```r
+# Load the package
+library(Rcpp)
+library(RcppEigen)
+
+# Source all required files
+sourceCpp("rlca.cpp")
+sourceCpp("depLCA.cpp")
+sourceCpp("depLCA_5.cpp")
+source("depLCA.R")
+sourceCpp("slcm.cpp")
+
+# Prepare your data
+# data should be a matrix or data frame with categorical observations
+
+# Perform latent class analysis
+# result <- depLCA(data, nclasses = 3)
+```
+
+## Usage
+
+### Basic Analysis
+
+```r
+# Define number of classes
+nclasses <- 3
+
+# Run analysis
+# result <- depLCA(data, nclasses = nclasses)
+
+# View results
+# summary(result)
+```
+
+### Advanced Analysis
+
+For more complex models with spatial or dependent structures:
+
+```r
+# Spatial Latent Class Model
+# result_spatial <- slcm(data, nclasses = 3, spatial_weights = weights_matrix)
+```
+
+## Functions
+
+### Main Functions
+
+- **`depLCA()`** - Perform dependent latent class analysis
+- **`slcm()`** - Spatial latent class models
+- **`rlca()`** - Basic latent class analysis
+
+### Supporting Functions
+
+Refer to the source code documentation for detailed function signatures and parameters.
+
+## Requirements
+
+- **R** (>= 3.6.0)
+- **Rcpp** package
+- **RcppEigen** package
+- **C++ compiler** (for compiling Rcpp code)
+
+## File Structure
+
+```
+depLCA/
+├── README.md
+├── depLCA.R           # Main R functions
+├── depLCA.cpp         # C++ implementation
+├── depLCA_5.cpp       # Alternative implementation
+├── rlca.cpp           # Basic LCA C++ code
+├── slcm.cpp           # Spatial LCM C++ code
+└── ...other files
+```
+
+## Notes
+
+- Ensure all `.cpp` files are compiled before using the package
+- The package uses Rcpp for seamless R-C++ integration
+- For large datasets, the C++ implementation provides significant performance improvements
+
+## License
+
+[Specify your license here - e.g., MIT, GPL, etc.]
+
+## Author
+
+Maintained by: zllin-source
+
+## Contact & Support
+
+For issues, questions, or suggestions, please open an issue on GitHub.
+
+---
+
+Last updated: 2026-05-07
