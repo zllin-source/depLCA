@@ -95,7 +95,7 @@ nclasses <- 3
 For more complex models with spatial or dependent structures:
 
 ```r
-# Spatial Latent Class Model
+# Standard Latent Class Model
 # result_spatial <- slcm(data, nclasses = 3, spatial_weights = weights_matrix)
 ```
 
@@ -104,51 +104,10 @@ For more complex models with spatial or dependent structures:
 ### Main Functions
 
 - **`depLCA()`** - Perform dependent latent class analysis
-- **`slcm()`** - Spatial latent class models
+- **`slcm()`** - Standard latent class models
 - **`rlca()`** - Basic latent class analysis
 
 ### Supporting Functions
 
 Refer to the source code documentation for detailed function signatures and parameters.
 
-## Requirements
-
-- **R** (>= 3.6.0)
-- **Rcpp** package
-- **RcppEigen** package
-- **C++ compiler** (for compiling Rcpp code)
-
-## File Structure
-
-```
-depLCA/
-├── README.md
-├── depLCA.R           # Main R functions
-├── depLCA.cpp         # C++ implementation
-├── depLCA_5.cpp       # Alternative implementation
-├── rlca.cpp           # Basic LCA C++ code
-├── slcm.cpp           # Spatial LCM C++ code
-└── ...other files
-```
-
-## Notes
-
-- Ensure all `.cpp` files are compiled before using the package
-- The package uses Rcpp for seamless R-C++ integration
-- For large datasets, the C++ implementation provides significant performance improvements
-
-## License
-
-[Specify your license here - e.g., MIT, GPL, etc.]
-
-## Author
-
-Maintained by: zllin-source
-
-## Contact & Support
-
-For issues, questions, or suggestions, please open an issue on GitHub.
-
----
-
-Last updated: 2026-05-07
