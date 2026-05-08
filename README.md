@@ -31,7 +31,7 @@ depLCA is an R package that implements dependent latent class analysis methods. 
 
 Make sure you have the following R packages installed:
 
-```{R}
+```r
 install.packages("Rcpp")
 install.packages("RcppEigen")
 ```
